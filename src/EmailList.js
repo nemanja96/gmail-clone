@@ -10,6 +10,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import InboxIcon from '@mui/icons-material/Inbox';
 import PeopleIcon from '@mui/icons-material/People';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import EmailRow from './EmailRow';
 
 function EmailList() {
 
@@ -52,6 +53,27 @@ function EmailList() {
         {emailSection(InboxIcon, "Glavno", true)}
         {emailSection(PeopleIcon, "Drustveno")}
         {emailSection(LocalOfferIcon, "Promocije")}
+      </div>
+
+      <div className="emailList__list">
+        <EmailRow
+          title="Twitch"
+          subject="Hey fellow streamer"
+          description="This is a test fsafas dfasfas fdsfasfsafdsafs ffdsafsadfsafsadfs asdfsadfsdafsa sdfafds dfsafasfd fdasf asdf asds fsdaf ads fdasf a"
+          time="10px"
+        />
+                <EmailRow
+          title="Twitch"
+          subject="Hey fellow streamer"
+          description="This is a test"
+          time="10px"
+        />
+                <EmailRow
+          title="Twitch"
+          subject="Hey fellow streamer"
+          description="This is a test"
+          time="10px"
+        />
       </div>
     </div>
   )

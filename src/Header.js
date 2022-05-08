@@ -1,12 +1,16 @@
 import React from 'react';
 import './Header.css';
 import IconButton from '@mui/material/IconButton';
+import avatar from './img/small-avatar.png';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import TuneIcon from '@mui/icons-material/Tune';
+import CloseIcon from '@mui/icons-material/Close';
 import AppsIcon from '@mui/icons-material/Apps';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import Avatar from '@mui/material/Avatar';
+import logo from './img/logo.png';
 
 function Header() {
   return (
@@ -14,25 +18,33 @@ function Header() {
         <div className="header__wrapper">
             <div className="header__left">
                 <IconButton>
-                    <MenuIcon />
+                    <MenuIcon className="menu__icon" />
                 </IconButton>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png" />
+                <img src={logo} className="gmail__logo" />
             </div>
 
             <div className="header__middle">
                 <SearchIcon className="header__searchIcon" />
                 <input type="text" placeholder='Search mail' />
-                <ArrowDropDownIcon className="header__inputCaret" />
+                <IconButton>
+                    <CloseIcon className="header__inputCaret" />
+                </IconButton>
+                <IconButton>
+                    <TuneIcon className="header__inputCaret" />
+                </IconButton>
             </div>
 
             <div className="header__right">
                 <IconButton>
-                    <AppsIcon />
+                    <HelpOutlineIcon className="header__icons" />
                 </IconButton>
                 <IconButton>
-                    <NotificationsIcon />
+                    <SettingsOutlinedIcon className="header__icons" />
                 </IconButton>
-                <Avatar sx={{ width: 30, height: 30 }} />
+                <IconButton>
+                    <AppsIcon className="header__icons" />
+                </IconButton>
+                <Avatar src={avatar} sx={{ width: 30, height: 30 }} className="header__avatar" />
             </div>
         </div>
     </div>

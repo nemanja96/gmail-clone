@@ -13,6 +13,8 @@
 .sidebarOption__icon{
     width: 20px !important;
     height: 20px !important;
+    margin-right: 5px;
+    color: #eee !important;
 }
 
 .sidebarOption:hover{
@@ -40,10 +42,11 @@
 .sidebarOption > h3{
     flex: 1;
     margin-left: 10px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     transition: .1s all;
-    background-color: transparent
+    background-color: transparent;
+    color: #eee;
 }
 
 .sidebarOption > p {
@@ -51,7 +54,8 @@
     font-weight: 300;
     transition: .3s all;
     font-size: 13px;
-    background-color: transparent
+    background-color: transparent;
+    color: #eee;
 }
 
 .sidebarOption:hover > p {

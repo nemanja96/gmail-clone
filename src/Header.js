@@ -25,7 +25,7 @@ function Header() {
 
             <div className="header__middle">
                 <SearchIcon className="header__searchIcon" />
-                <input type="text" placeholder='Search mail' />
+                <input type="text" placeholder='Pretražite imejlove' />
                 <IconButton>
                     <CloseIcon className="header__inputCaret" />
                 </IconButton>

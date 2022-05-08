@@ -1,3 +1,64 @@
-.email__list{
-    flex: 0.8;
+.emailList{
+    flex: 0.75;
+}
+
+.emailList__settings{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.emailList__icons{
+    color: #ccc !important;
+}
+
+.emailList__sections{
+    display: flex;
+    background-color: #eee;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.emailList__sectionItem{
+    display: flex;
+    align-items: center;
+    flex: 0.25;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.emailList__sectionItem:hover,
+.emailList__sectionItem:hover .icon,
+.emailList__sectionItem:hover h4{
+    color: #333;
+    background-color: #ddd;
+}
+
+.emailList__sectionItem .icon{
+    width: 20px;
+    color: #555;
+}
+
+.emailList__sectionItem h4{
+    padding: 17px 10px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.email--active{
+    border-bottom: 3px solid #d93025;
+}
+
+.email--active:hover h4,
+.email--active:hover .icon{
+    color: #d93025 !important;
+}
+
+.email--active .icon, .email--active h4{
+    color: #d93025;
 }

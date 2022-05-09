@@ -17,13 +17,18 @@ import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
+import { useDispatch } from 'react-redux';
+import { openSendMessage } from './features/mailSlice';
 
 function Sidebar() {
+
+    const dispatch = useDispatch();
+
   return (
     <div className="sidebar">
 
         <div className="sidebar__links">
-            <Button className="sidebar__compose"><img src={plus} /> Nov imejl</Button>
+            <Button onClick={() => dispatch(openSendMessage())} className="sidebar__compose"><img src={plus} /> Nov imejl</Button>
 
             <SidebarOption Icon={InboxIcon} title="Primljene" number={54} selected={true} />
             <SidebarOption Icon={StarIcon} title="Sa zvezdicom" number={7} />

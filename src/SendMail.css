@@ -1,0 +1,77 @@
+.sendMail{
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 50%;
+    height: 60%;
+    max-width: 600px;
+    max-height: 500px;
+    z-index: 999;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sendMail__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #404040;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.sendMail__header > h4{
+    margin: 0;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.sendMail__send{
+    background-color: #1a73e8 !important;
+    width: 130px !important;
+    height: 40px !important;
+    color: white !important;
+    text-transform: capitalize !important;
+    margin: 10px !important;
+}
+
+.sendMail__close{
+    color: white !important;
+    width: 20px !important;
+    cursor: pointer;
+}
+
+.sendMail > form{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.sendMail > form > input{
+    width: 96%;
+    height: 20px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-top: 1px solid #eee;
+}
+
+.sendMail > form > input::placeholder{
+    color: #666;
+    font-weight: 500;
+}
+
+form > .sendMail__message{
+    flex: 1;
+}
+
+.mail__fieldRequired{
+    color: red !important;
+    font-size: 14px;
+}

@@ -5,7 +5,7 @@ const initialState = {
   status: 'idle',
 };
 
-export const counterSlice = createSlice({
+export const mailSlice = createSlice({
   name: 'mail',
   initialState,
   reducers: {

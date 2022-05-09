@@ -21,15 +21,18 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 function Sidebar() {
   return (
     <div className="sidebar">
-        <Button className="sidebar__compose"><img src={plus} /> Nov imejl</Button>
 
-        <SidebarOption Icon={InboxIcon} title="Primljene" number={54} selected={true} />
-        <SidebarOption Icon={StarIcon} title="Sa zvezdicom" number={7} />
-        <SidebarOption Icon={AccessTimeFilledIcon} title="Odloženo" number={1} />
-        <SidebarOption Icon={SendIcon} title="Poslate" number={0} />
-        <SidebarOption Icon={InsertDriveFileIcon} title="Nedovršene" number={15} />
-        <SidebarOption Icon={LabelImportantIcon} title="Važno" number={3} />
-        <SidebarOption Icon={ExpandMoreIcon} title="Više" number="" />
+        <div className="sidebar__links">
+            <Button className="sidebar__compose"><img src={plus} /> Nov imejl</Button>
+
+            <SidebarOption Icon={InboxIcon} title="Primljene" number={54} selected={true} />
+            <SidebarOption Icon={StarIcon} title="Sa zvezdicom" number={7} />
+            <SidebarOption Icon={AccessTimeFilledIcon} title="Odloženo" number={1} />
+            <SidebarOption Icon={SendIcon} title="Poslate" number={0} />
+            <SidebarOption Icon={InsertDriveFileIcon} title="Nedovršene" number={15} />
+            <SidebarOption Icon={LabelImportantIcon} title="Važno" number={3} />
+            <SidebarOption Icon={ExpandMoreIcon} title="Više" number="" />
+        </div>
 
         <div className="sidebar__meet">
             <h4>Meet</h4>

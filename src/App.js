@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import Main from './Main';
+import Mail from './Mail';
 import EmailList from './EmailList';
+import Tools from './Tools';
 import { BrowserRouter } from "react-router-dom";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -17,9 +18,11 @@ function App() {
           <Sidebar />
 
           <Routes>
-            <Route path="/mail" element={<Main />} />
+            <Route path="/mail" element={<Mail />} />
             <Route path="/" element={<EmailList />} />
           </Routes>
+
+          <Tools />
         </div>
       </div>
     </BrowserRouter>

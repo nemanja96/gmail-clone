@@ -1,0 +1,86 @@
+.mail{
+    flex: 0.8;
+}
+
+.mail__tools{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mail__btn{
+    margin-top: 5px !important;
+    margin-left: 10px !important;
+}
+
+.mail__icons{
+    color: #ccc !important;
+    font-size: 22px !important;
+}
+
+.mail__body{
+    background-color: white;
+    min-height: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mail__bodyHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mail__bodyHeader > h2{
+    font-weight: 400;
+    color: #202124;
+    font-size: 22px;
+    margin-left: 50px;
+}
+
+.mail__bodyHeader > p {
+    overflow-wrap: break-word;
+}
+
+.mail__headerIcons{
+    width: 20px !important;
+    color: #555 !important;
+}
+
+.mail__author{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+/* MAIN AVATAR INFO */
+.mail__authorInfo{
+    display: flex;
+    align-items: center;
+}
+
+.mail__authorInfo > h4{
+    font-size: 14px;
+    font-weight: 700;
+    color: #202124;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.mail__authorInfo > span{
+    font-size: 12px;
+    color: 555;
+    font-weight: 400;
+    color: #555;
+}
+
+.mail__authorTime{
+    display: flex;
+    align-items: center;
+}
+
+.mail__authorTime span{
+    color: #5f6368;
+    font-weight: 400;
+    font-size: 12px;
+}

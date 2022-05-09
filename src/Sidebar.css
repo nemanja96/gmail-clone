@@ -1,5 +1,11 @@
 .sidebar{
     flex: 0.2;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar__links{
+    margin-right: 20px;
 }
 
 .sidebar__compose{

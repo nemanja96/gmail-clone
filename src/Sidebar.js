@@ -17,12 +17,15 @@ import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openSendMessage } from './features/mailSlice';
+import { selectUser } from './features/userSlice';
 
 function Sidebar() {
 
     const dispatch = useDispatch();
+
+    const user = useSelector(selectUser);
 
   return (
     <div className="sidebar">
@@ -50,7 +53,7 @@ function Sidebar() {
             <div className="hangouts__avatar">
                 <Box sx={{ color: 'action.active' }}>
                     <Badge color="secondary" variant="dot" anchorOrigin={{ vertical: 'bottom', horizontal: 'right',}} overlap="circular">
-                        <Avatar src={avatar} sx={{ width: 30, height: 30 }} />
+                        <Avatar src={user?.photoUrl} sx={{ width: 30, height: 30 }} />
                     </Badge>
                 </Box>
                 <span>Nemanja</span>

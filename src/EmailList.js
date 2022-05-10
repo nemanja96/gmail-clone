@@ -17,6 +17,8 @@ function EmailList() {
 
   const [emails, setEmails] = useState([]);
 
+  console.log(emails.length);
+
   useEffect(() => {
     db.collection('emails').orderBy("timestamp", "desc").onSnapshot(snapshot => {
       setEmails(

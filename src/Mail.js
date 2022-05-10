@@ -21,12 +21,14 @@ import StarBorderPurple500SharpIcon from '@mui/icons-material/StarBorderPurple50
 import ReplySharpIcon from '@mui/icons-material/ReplySharp';
 import { selectMail } from './features/mailSlice';
 import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
 
 function Mail() {
 
   const navigation = useNavigate();
 
   const mail = useSelector(selectMail);
+  const user = useSelector(selectUser);
 
   return (
     <div className='mail'>

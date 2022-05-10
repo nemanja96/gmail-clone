@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -9,15 +9,32 @@ import Tools from './Tools';
 import Login from './Login';
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import { useSelector } from 'react-redux';
-import { selectUser } from './features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
 import { sendMessageIsOpen } from './features/mailSlice';
+import { auth } from './firebase';
 
 function App() {
 
   const user = useSelector(selectUser);
 
+  const dispatch = useDispatch();
+
   const sendMessageOpen = useSelector(sendMessageIsOpen);
+
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      if(user){
+      dispatch(login({
+        displayName: user.displayName,
+        email: user.email,
+        photoUrl: user.photoURL,
+      }))} else {
+        dispatch(logout());
+        auth.signOut();
+      }
+    })
+  }, [])
 
   return (
     <BrowserRouter>

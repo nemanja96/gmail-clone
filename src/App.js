@@ -6,17 +6,24 @@ import Mail from './Mail';
 import EmailList from './EmailList';
 import SendMail from './SendMail';
 import Tools from './Tools';
+import Login from './Login';
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import { selectMail } from './features/mailSlice';
+import { selectUser } from './features/userSlice';
+import { sendMessageIsOpen } from './features/mailSlice';
 
 function App() {
 
-  const sendMessageIsOpen = useSelector(selectMail);
+  const user = useSelector(selectUser);
+
+  const sendMessageOpen = useSelector(sendMessageIsOpen);
 
   return (
     <BrowserRouter>
+      {!user ? 
+        <Login />  
+        :
       <div className="app">
         <Header />
 
@@ -28,10 +35,11 @@ function App() {
             <Route path="/" element={<EmailList />} />
           </Routes>
 
-          { sendMessageIsOpen && <SendMail /> }
+          {sendMessageOpen && <SendMail /> }
           <Tools />
         </div>
       </div>
+      }
     </BrowserRouter>
   );
 }

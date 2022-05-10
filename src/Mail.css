@@ -84,3 +84,10 @@
     font-weight: 400;
     font-size: 12px;
 }
+
+.mail__message{
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.3em;
+    
+}

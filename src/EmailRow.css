@@ -38,24 +38,28 @@
 }
 
 .emailRow__message > h4{
-    width: 500px;
+    max-width: 450px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .emailRow__title{
     font-size: 14px;
-    flex: 0.2;
+    flex: 0.5;
     font-weight: 700;
     color: #202124;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .emailRow__time{
     padding-right: 15px;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: bold;
 }
 

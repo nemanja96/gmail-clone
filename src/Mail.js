@@ -19,10 +19,14 @@ import LocalPrintshopSharpIcon from '@mui/icons-material/LocalPrintshopSharp';
 import OpenInNewSharpIcon from '@mui/icons-material/OpenInNewSharp';
 import StarBorderPurple500SharpIcon from '@mui/icons-material/StarBorderPurple500Sharp';
 import ReplySharpIcon from '@mui/icons-material/ReplySharp';
+import { selectMail } from './features/mailSlice';
+import { useSelector } from 'react-redux';
 
 function Mail() {
 
   const navigation = useNavigate();
+
+  const mail = useSelector(selectMail);
 
   return (
     <div className='mail'>
@@ -70,7 +74,7 @@ function Mail() {
       </div>
       <div className="mail__body">
         <div className="mail__bodyHeader">
-          <h2>Action required - WHOIS Verification</h2>
+          <h2>{mail?.title}</h2>
           <div className='mail__bodyHeaderIcons'>
             <IconButton className="mail__btn">
               <LocalPrintshopSharpIcon className="mail__headerIcons" />
@@ -83,11 +87,11 @@ function Mail() {
         <div className='mail__author'>
           <div className='mail__authorInfo'>
             <Avatar />
-            <h4>WebHostingSrbijaRS</h4>
-            <span> &lt;do_not_reply@name-controls.com&gt;</span>
+            <h4>{mail?.title}</h4>
+            <span> &lt;{mail?.from}&gt;</span>
           </div>
           <div className="mail__authorTime">
-            <span>22. 4. 2022. 09:03</span>
+            <span>{mail?.time}</span>
             <IconButton className="mail__btn">
               <StarBorderPurple500SharpIcon className="mail__headerIcons" />
             </IconButton>
@@ -100,7 +104,7 @@ function Mail() {
           </div>
         </div>
         <div className="mail__message">
-          
+          {mail?.message}
         </div>
       </div>
     </div>

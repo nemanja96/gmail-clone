@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './EmailList.css';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
@@ -11,8 +11,21 @@ import InboxIcon from '@mui/icons-material/Inbox';
 import PeopleIcon from '@mui/icons-material/People';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import EmailRow from './EmailRow';
+import { db } from './firebase';
 
 function EmailList() {
+
+  const [emails, setEmails] = useState([]);
+
+  useEffect(() => {
+    db.collection('emails').orderBy("timestamp", "desc").onSnapshot(snapshot => {
+      setEmails(
+        snapshot.docs.map(doc => ({ 
+            id: doc.id,
+            data: doc.data()
+        }))
+    )})
+}, [])
 
   const emailSection = (Icon, title, active) => (
     <div className={`emailList__sectionItem ${active && `email--active`}`}>
@@ -56,24 +69,12 @@ function EmailList() {
       </div>
 
       <div className="emailList__list">
-        <EmailRow
-          title="Twitch"
-          subject="Hey fellow streamer"
-          description="This is a test fsafas dfasfas fdsfasfsafdsafs ffdsafsadfsafsadfs asdfsadfsdafsa sdfafds dfsafasfd fdasf asdf asds fsdaf ads fdasf a"
-          time="10px"
-        />
-                <EmailRow
-          title="Twitch"
-          subject="Hey fellow streamer"
-          description="This is a test"
-          time="10px"
-        />
-                <EmailRow
-          title="Twitch"
-          subject="Hey fellow streamer"
-          description="This is a test"
-          time="10px"
-        />
+        {
+          emails.map(({id, data: { from, to, title, message, timestamp }}) => (
+            <EmailRow key={id} id={id} from={from} to={to} title={title} message={message} time={new Date(timestamp?.seconds * 1000).toUTCString()} />
+          ))
+        }
+
       </div>
     </div>
   )

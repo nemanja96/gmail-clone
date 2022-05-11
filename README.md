@@ -6,7 +6,7 @@
 <img src="gmail-clone.png" />
 
 ## Mobile Version
-<img src="gmail-clone-mobile.png" />
+<img src="gmail-clone-mob.png" />
 
 ## Available Scripts
 
